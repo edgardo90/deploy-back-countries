@@ -2,13 +2,12 @@ require('dotenv').config();
 const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
-const {
-  DATABASE_URL
-} = process.env;
+const {DATABASE_URL } = process.env; //esto es para heroku
 
-const sequelize = new Sequelize(DATABASE_URL, {
+const sequelize = new Sequelize(DATABASE_URL, { // lo aplico aca
   logging: false, // set to console.log to see the raw SQL queries
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+  //esto es para heroku
   dialect: "postgres",
   dialectOptions: {
     ssl: {
@@ -16,6 +15,7 @@ const sequelize = new Sequelize(DATABASE_URL, {
       rejectUnauthorized: false,
     },
   },
+  // termina aca
 });
 const basename = path.basename(__filename);
 
