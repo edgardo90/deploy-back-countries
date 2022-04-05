@@ -6,7 +6,7 @@ const {Country , Activity} = require("../db"); // traigo Country and Activity de
 
 
 const getApiInfo = async () =>{ // funcion para traer cosas en la api y crear base de datos Country.js
-    const apiUrl = await axios.get("https://restcountries.com/v3/all");
+    const apiUrl = await axios.get("https://restcountries.com/v2/all");
     const resultUrl = await apiUrl.data.map(d =>{ // traigo lo que quiero guardar en la api 
         return {
             // id: d.tld ? d.tld[0] : ".rg" ,
