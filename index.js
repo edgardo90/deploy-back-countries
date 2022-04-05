@@ -22,7 +22,7 @@ const { conn } = require('./src/db.js');
 const { PORT } = process.env; // traigo esto para heroku
 
 // Syncing all the models at once.
-conn.sync({ force: false }).then(() => {
+conn.sync({ force: true }).then(() => {
   server.listen(PORT, () => { // lo aplico aca
     console.log(`Listen on port ${PORT}`); // lo aplico aca
   });
